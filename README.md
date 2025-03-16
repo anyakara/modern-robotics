@@ -31,6 +31,54 @@ To install the Python bindings:
 ```pip install .```
 
 
+## Architecture
+```
+robotics-math-lib/
+│── include/                      # Header files for core library
+│   ├── linalg/                   # Linear algebra module
+│   │   ├── Matrix.hpp             # Matrix operations
+│   │   ├── Vector.hpp             # Vector operations
+│   │   ├── Transform.hpp          # Transformation matrices
+│   ├── kinematics/                # Kinematics module
+│   │   ├── ForwardKinematics.hpp  # FK solvers
+│   │   ├── InverseKinematics.hpp  # IK solvers
+│   │   ├── Jacobian.hpp           # Jacobian computation
+│   ├── dynamics/                  # Rigid body dynamics
+│   │   ├── NewtonEuler.hpp        # Newton-Euler solver
+│   │   ├── Lagrangian.hpp         # Lagrangian dynamics
+│   ├── planning/                  # Motion planning
+│   │   ├── PathPlanning.hpp       # A*, RRT, PRM
+│   │   ├── Trajectory.hpp         # Splines & motion profiles
+│   ├── optimization/              # Numerical solvers
+│   │   ├── NonlinearSolver.hpp    # Levenberg-Marquardt, QP
+│   │   ├── KalmanFilter.hpp       # EKF, UKF for sensor fusion
+│   ├── utils/                     # Helper functions
+│   │   ├── MathUtils.hpp          # General math utilities
+│   │   ├── Timer.hpp              # Performance measurement
+│── src/                           # Implementation files
+│   ├── linalg/                    # Linear algebra implementation
+│   ├── kinematics/                 # Kinematics implementation
+│   ├── dynamics/                   # Dynamics implementation
+│   ├── planning/                   # Motion planning implementation
+│   ├── optimization/               # Optimization methods
+│   ├── utils/                      # Helper function implementations
+│── tests/                          # Unit tests
+│   ├── test_matrix.cpp             # Tests for matrix operations
+│   ├── test_kinematics.cpp         # Tests for FK, IK
+│── examples/                       # Example applications
+│   ├── basic_fk.cpp                # FK example
+│   ├── rrt_planner.cpp             # RRT motion planning
+│── python_bindings/                # Python wrapper
+│   ├── robotics_math_pybind.cpp    # Pybind11 integration
+│── benchmarks/                     # Performance benchmarks
+│   ├── bench_matrix.cpp            # Benchmarking matrix ops
+│── docs/                           # Documentation
+│── CMakeLists.txt                   # CMake build script
+│── README.md                        # Project overview
+│── .gitignore                        # Ignore unnecessary files
+```
+
+
 ## Usage
 
 1. Forward Kinematics
