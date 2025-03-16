@@ -18,11 +18,13 @@
 
 ### **Build from Source**
 1. Clone the repository:
-```git clone https://github.com/yourname/robotics-math-lib.git
+```bash
+git clone https://github.com/yourname/robotics-math-lib.git
 cd robotics-math-lib```
 
 2. Create a build directory and compile:
-```mkdir build && cd build
+```bash
+mkdir build && cd build
 cmake ..
 make -j$(nproc)```
 
@@ -32,7 +34,7 @@ To install the Python bindings:
 
 
 ## Architecture
-```
+
 robotics-math-lib/
 │── include/                      # Header files for core library
 │   ├── linalg/                   # Linear algebra module
@@ -76,7 +78,7 @@ robotics-math-lib/
 │── CMakeLists.txt                   # CMake build script
 │── README.md                        # Project overview
 │── .gitignore                        # Ignore unnecessary files
-```
+
 
 
 ## Usage
